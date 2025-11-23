@@ -4,7 +4,6 @@ class Stack{
    Scanner sc = new Scanner(System.in);
    int[] arr = new int[5];
    int top = -1;
-
    public void push()
    {
        if(top == arr.length-1)
@@ -16,7 +15,6 @@ class Stack{
        int no = sc.nextInt();
        arr[++top] = no;
    }
-
    public  void pop()
    {
        if(top == -1)
@@ -28,7 +26,6 @@ class Stack{
        System.out.println("Element Popped:- "+ arr[top]);
        top--;
    }
-
    public void peek()
    {
        System.out.println("Element at Top:- "+ arr[top]);

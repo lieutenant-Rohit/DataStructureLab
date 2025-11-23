@@ -13,8 +13,7 @@ class CDLL {
     private Node head;
     private Node tail;
     private int size;
-
-    // Insert at beginning
+    
     public void insertFirst(int val) {
         Node node = new Node(val);
         if (head == null) {
@@ -31,8 +30,7 @@ class CDLL {
         }
         size++;
     }
-
-    // Insert at end
+    
     public void insertLast(int val) {
         if (head == null) {
             insertFirst(val);
@@ -46,8 +44,7 @@ class CDLL {
         tail = node;
         size++;
     }
-
-    // Insert at given index
+    
     public void insert(int val, int index) {
         if (index == 0) {
             insertFirst(val);
@@ -70,8 +67,7 @@ class CDLL {
         temp.next = node;
         size++;
     }
-
-    // Delete first element
+    
     public int deleteFirst() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -91,8 +87,7 @@ class CDLL {
         size--;
         return val;
     }
-
-    // Delete last element
+    
     public int deleteLast() {
         if (size <= 1) {
             return deleteFirst();
@@ -105,8 +100,7 @@ class CDLL {
         size--;
         return val;
     }
-
-    // Delete at specific index
+    
     public int delete(int index) {
         if (index == 0) {
             return deleteFirst();
@@ -126,8 +120,7 @@ class CDLL {
         size--;
         return val;
     }
-
-    // Display forward
+    
     public void displayForward() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -142,8 +135,7 @@ class CDLL {
 
         System.out.println("(Back to Head)");
     }
-
-    // Display backward
+    
     public void displayBackward() {
         if (tail == null) {
             System.out.println("List is empty!");

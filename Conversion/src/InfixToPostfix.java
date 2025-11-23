@@ -1,25 +1,17 @@
 import java.util.Stack;
 
 public class InfixToPostfix {
-
     static int precedence(char ch) {
-        switch (ch) {
-            case '+':
-            case '-':
-                return 1;
-            case '*':
-            case '/':
-                return 2;
-            case '^':
-                return 3;
-        }
-        return -1;
+        return switch (ch) {
+            case '+', '-' -> 1;
+            case '*', '/' -> 2;
+            case '^' -> 3;
+            default -> -1;
+        };
     }
-
     static boolean isOperand(char ch) {
         return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
     }
-
     static String convertInfixToPostfix(String expression) {
         StringBuilder result = new StringBuilder();
         Stack<Character> stack = new Stack<>();
@@ -38,18 +30,16 @@ public class InfixToPostfix {
                 if (!stack.isEmpty() && stack.peek() == '(') {
                     stack.pop();
                 }
-            } else { // Operator
+            } else {
                 while (!stack.isEmpty() && precedence(ch) <= precedence(stack.peek())) {
                     result.append(stack.pop());
                 }
                 stack.push(ch);
             }
         }
-
         while (!stack.isEmpty()) {
             result.append(stack.pop());
         }
-
         return result.toString();
     }
 

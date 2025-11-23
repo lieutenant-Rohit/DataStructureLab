@@ -1,7 +1,6 @@
 import java.util.Stack;
 
 public class InfixToPrefix {
-
     static int precedence(char ch) {
         switch (ch) {
             case '+':
@@ -15,18 +14,13 @@ public class InfixToPrefix {
         }
         return -1;
     }
-
     static boolean isOperand(char ch) {
         return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
     }
-
     static String infixToPrefix(String infix) {
-        // Step 1: Reverse the infix expression
         StringBuilder input = new StringBuilder(infix);
         input.reverse();
         char[] chars = input.toString().toCharArray();
-
-        // Step 2: Swap '(' and ')'
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == '(') {
                 chars[i] = ')';
@@ -34,13 +28,8 @@ public class InfixToPrefix {
                 chars[i] = '(';
             }
         }
-
-        // Step 3: Convert to postfix
         String postfix = infixToPostfix(new String(chars));
-
-        // Step 4: Reverse postfix to get prefix
         String prefix = new StringBuilder(postfix).reverse().toString();
-
         return prefix;
     }
 
@@ -62,7 +51,7 @@ public class InfixToPrefix {
                 if (!stack.isEmpty() && stack.peek() == '(') {
                     stack.pop();
                 }
-            } else { // Operator
+            } else {
                 while (!stack.isEmpty() && precedence(ch) <= precedence(stack.peek())) {
                     result.append(stack.pop());
                 }

@@ -6,7 +6,6 @@ class Queue {
     int rear;
     int capacity;
     int size;
-
     Queue(int capacity) {
         this.capacity = capacity;
         this.arr = new int[capacity];
@@ -14,15 +13,12 @@ class Queue {
         rear = -1;
         size = 0;
     }
-
     public boolean isFull() {
         return size == capacity;
     }
-
     public boolean isEmpty() {
         return size == 0;
     }
-
     public void enqueue(int item) {
         if (isFull()) {
             System.out.println("Queue is FULL!");
@@ -32,7 +28,6 @@ class Queue {
         size++;
         System.out.println(item + " enqueued successfully!");
     }
-
     public void dequeue() {
         if (isEmpty()) {
             System.out.println("Queue is EMPTY!");
@@ -42,7 +37,6 @@ class Queue {
         size--;
         System.out.println("Element dequeued: " + removedItem);
     }
-
     public void peek() {
         if (isEmpty()) {
             System.out.println("Queue is EMPTY!");
@@ -50,7 +44,6 @@ class Queue {
         }
         System.out.println("Element at Front: " + arr[front]);
     }
-
     public void display() {
         if (isEmpty()) {
             System.out.println("Queue is EMPTY!");

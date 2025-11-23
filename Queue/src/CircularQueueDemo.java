@@ -22,7 +22,6 @@ class CircularQueue {
     public boolean isEmpty() {
         return size == 0;
     }
-
     public void enqueue(int item) {
         if (isFull()) {
             System.out.println("Queue is FULL! Cannot enqueue.");

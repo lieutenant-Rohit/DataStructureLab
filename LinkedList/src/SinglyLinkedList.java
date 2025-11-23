@@ -18,7 +18,7 @@ class LL {
     private Node tail;
     private int size;
 
-    // Insert at beginning
+
     public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;
@@ -29,7 +29,6 @@ class LL {
         size += 1;
     }
 
-    // Insert at end
     public void insertLast(int val) {
         if (tail == null) {
             insertFirst(val);
@@ -41,7 +40,6 @@ class LL {
         size += 1;
     }
 
-    // Insert at given index
     public void insert(int val, int index) {
         if (index == 0) {
             insertFirst(val);
@@ -62,7 +60,6 @@ class LL {
         size += 1;
     }
 
-    // Display the list
     public void display() {
         Node temp = head;
         while (temp != null) {
@@ -72,7 +69,6 @@ class LL {
         System.out.println("END");
     }
 
-    // Delete first node
     public int deleteFirst() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -87,7 +83,6 @@ class LL {
         return val;
     }
 
-    // Helper: get node at index
     public Node get(int index) {
         Node node = head;
         for (int i = 0; i < index; i++) {
@@ -96,7 +91,6 @@ class LL {
         return node;
     }
 
-    // Delete last node
     public int deleteLast() {
         if (size <= 1) {
             return deleteFirst();
@@ -109,7 +103,6 @@ class LL {
         return val;
     }
 
-    // Delete at given index
     public int delete(int index) {
         if (index == 0) {
             return deleteFirst();
@@ -123,12 +116,10 @@ class LL {
         size--;
         return val;
     }
-
     public int getSize() {
         return size;
     }
 }
-
 public class SinglyLinkedList {
     public static void main(String[] args) {
         LL list = new LL();
@@ -140,13 +131,10 @@ public class SinglyLinkedList {
 
         System.out.println("Linked List after insertions:");
         list.display();
-
         System.out.println("\nDeleted first element: " + list.deleteFirst());
         list.display();
-
         System.out.println("\nDeleted last element: " + list.deleteLast());
         list.display();
-
         list.insertLast(40);
         list.insertLast(50);
         list.insertLast(60);

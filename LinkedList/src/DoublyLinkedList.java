@@ -20,7 +20,6 @@ class DLL {
     private Node tail;
     private int size;
 
-    // Insert at beginning
     public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;
@@ -34,7 +33,6 @@ class DLL {
         size++;
     }
 
-    // Insert at end
     public void insertLast(int val) {
         if (tail == null) {
             insertFirst(val);
@@ -47,7 +45,6 @@ class DLL {
         size++;
     }
 
-    // Insert at a specific index
     public void insert(int val, int index) {
         if (index == 0) {
             insertFirst(val);
@@ -71,7 +68,6 @@ class DLL {
         size++;
     }
 
-    // Delete first node
     public int deleteFirst() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -88,7 +84,6 @@ class DLL {
         return val;
     }
 
-    // Delete last node
     public int deleteLast() {
         if (size <= 1) {
             return deleteFirst();
@@ -100,7 +95,6 @@ class DLL {
         return val;
     }
 
-    // Delete at specific index
     public int delete(int index) {
         if (index == 0) {
             return deleteFirst();
@@ -121,7 +115,6 @@ class DLL {
         return val;
     }
 
-    // Display from head to tail
     public void displayForward() {
         Node temp = head;
         while (temp != null) {
@@ -131,7 +124,6 @@ class DLL {
         System.out.println("END");
     }
 
-    // Display from tail to head
     public void displayBackward() {
         Node temp = tail;
         while (temp != null) {
